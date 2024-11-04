@@ -1,4 +1,5 @@
 import axios from 'axios'
+import EventService from '@/services/EventService'
 
 const apiClient = axios.create({
     baseURL: 'https://my-json-server.typicode.com/pzyllll/componmentLab02db',
@@ -13,7 +14,7 @@ export default {
     getEvents(perPage: number, page: number) {
       return apiClient.get('/events?_limit=' + perPage + '&_page=' + page)
        },
-    
+
   getEvent(id: number) {
     return apiClient.get('/events/'+id)
   },

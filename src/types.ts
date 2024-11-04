@@ -18,6 +18,11 @@ export interface Event {
       message: string
     }
 
+    export interface EventState {
+      event: Event | null
+    }
+
+
 
 
 
