@@ -1,5 +1,5 @@
 import axios from 'axios'
-import EventService from '@/services/EventService'
+//import EventService from '@/services/EventService'
 
 const apiClient = axios.create({
     baseURL: 'https://my-json-server.typicode.com/pzyllll/componmentLab02db',

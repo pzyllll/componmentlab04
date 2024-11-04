@@ -34,8 +34,8 @@ const page = computed(() => props.page);
 onMounted(() => {
 
     watchEffect(() => {
-    events.value = null
-    EventService.getEvents(itemsPerPage.value, page.value)
+
+      EventService.getEvents(itemsPerPage.value, page.value)
       .then((response) => {
         events.value = response.data
         totalEvents.value = response.headers['x-total-count']
