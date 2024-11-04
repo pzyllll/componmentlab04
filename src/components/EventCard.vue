@@ -10,33 +10,33 @@ const props = defineProps<{
 }>();
 
 const router = useRouter();
-const showFlashMessage = ref(false);
-const flashMessage = ref('');
-
-const editEvent = async () => {
-  // Simulate data update
-  try {
-    // Here you would call the API to update the event data
-    // For now, we'll just simulate it
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    // Navigate to the details page
-    router.push({
-      name: 'event-detail-view',
-      params: { id: props.event.id },
-      query: { flashMessage: 'Data has been updated' }
-    });
-    // Show the flash message
-    showFlashMessage.value = true;
-    flashMessage.value = 'Data has been updated';
-  } catch (error) {
-    console.error('Failed to update event data', error);
-  }
-};
-
-const closeFlashMessage = () => {
-  showFlashMessage.value = false;
-};
+//const showFlashMessage = ref(false);
+//const flashMessage = ref('');
+//
+//const editEvent = async () => {
+//  // Simulate data update
+//  try {
+//    // Here you would call the API to update the event data
+//    // For now, we'll just simulate it
+//    await new Promise(resolve => setTimeout(resolve, 1000));
+//
+//    // Navigate to the details page
+//    router.push({
+//      name: 'event-detail-view',
+//      params: { id: props.event.id },
+//      query: { flashMessage: 'Data has been updated' }
+//    });
+//    // Show the flash message
+//    showFlashMessage.value = true;
+//    flashMessage.value = 'Data has been updated';
+//  } catch (error) {
+//    console.error('Failed to update event data', error);
+//  }
+//};
+//
+//const closeFlashMessage = () => {
+//  showFlashMessage.value = false;
+//};
 </script>
 
 <template>
@@ -47,8 +47,8 @@ const closeFlashMessage = () => {
   </RouterLink>
 
 
-  <button @click="editEvent">Edit</button>
-  <FlashMessage v-if="showFlashMessage" :message="flashMessage" @close="closeFlashMessage" />
+ <!-- <button @click="editEvent">Edit</button> -->
+ <!-- <FlashMessage v-if="showFlashMessage" :message="flashMessage" @close="closeFlashMessage" /> -->
   </div>
 </template>
 
