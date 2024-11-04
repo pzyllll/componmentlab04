@@ -45,7 +45,7 @@ const router = createRouter({
       ]
     },
 
-      
+
     {
       path: '/about',
       name: 'about',
@@ -57,13 +57,13 @@ const router = createRouter({
             component: NotFoundView,
             props: true
     },
-      
+
     {
           path: '/:catchAll(.*)',
           name: 'not-found',
           component: NotFoundView
     },
-      
+
     {
       path: '/student',
       name: 'student',
@@ -74,7 +74,8 @@ const router = createRouter({
             name: 'network-error-view',
             component: NetworkErrorView
           },
-      
+    
+
   ],
 })
 
