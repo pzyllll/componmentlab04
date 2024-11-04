@@ -6,6 +6,7 @@ import { onMounted, ref, computed,watchEffect} from 'vue'
 import EventService from '@/services/EventService'
 import { useRoute } from 'vue-router';
 import router from '@/router'
+//import nProgress from 'nprogress'
 
 
 
@@ -24,14 +25,6 @@ if (route.query.itemsPerPage) {
   itemsPerPage.value = parseInt(route.query.itemsPerPage as string, 10);
 }
 
-// const props = defineProps({
-  // page: {
-    // type: Number,
-    // required: true,
-  // },
-// })
-//const page = computed(() => props.page)
-
 const props = defineProps<{
   page: number;
 }>();
@@ -39,7 +32,7 @@ const props = defineProps<{
 const page = computed(() => props.page);
 
 onMounted(() => {
-    
+
     watchEffect(() => {
     events.value = null
     EventService.getEvents(itemsPerPage.value, page.value)
@@ -50,6 +43,7 @@ onMounted(() => {
       .catch((error) => {
         console.error('There was an error!', error)
       })
+
   })
 })
 
